@@ -1,4 +1,4 @@
-# 🧑‍💼 Online Job Portal
+# 🧑‍💼 Online-Job-Portal
 
 This is a full-stack **Online Job Portal** web application that allows **job seekers** to apply for jobs and **recruiters** to post and manage job listings. The system includes separate modules for **users**, **recruiters**, and **admin** with login/registration functionality.
 
