@@ -23,7 +23,7 @@ app.post('/api/register', (req, res) => {
   if (password.length < 6) {
     return res.status(400).json({ message: 'Password must be 6 characters long' });
   }
-  if (role !== 'user' && role !== 'admin') {
+  if (role !== 'user' && role !== 'admin' && role !== 'hr') {
     return res.status(400).json({ message: 'Invalid role' });
   }
 
