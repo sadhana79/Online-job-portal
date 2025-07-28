@@ -4,26 +4,26 @@ This is a full-stack **Online Job Portal** web application that allows **job see
 
 ---
 
-## 📌 Modules
+##  Modules
 
-### 👤 Users
+###  Users
 - Register/Login
 - View and apply for jobs
 - Manage their applications
 
-### 🧑‍💼 Recruiters
+###  Recruiters
 - Register/Login
 - Post new job listings
 - View applicants for their jobs
 
-### 🔧 Admin
+### Admin
 - View all users/recruiters
 - Delete/approve jobs
 - Manage system access
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 | Layer       | Technology          |
 |-------------|---------------------|
@@ -34,16 +34,16 @@ This is a full-stack **Online Job Portal** web application that allows **job see
 
 ---
 
-## 🚀 Features Implemented
+## Features Implemented
 
-- 🔐 **User & Admin Registration/Login** APIs
-- 🧪 Postman tested APIs
-- ✅ Form validation
-- 🔄 Role-based system (user/admin)
-- 💾 MySQL database integration
+-  **User & Admin Registration/Login** APIs
+-  Postman tested APIs
+-  Form validation
+-  Role-based system (user/admin)
+-  MySQL database integration
 
 ---
 
-## 🧠 Project Structure
+
 
 
