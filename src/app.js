@@ -11,7 +11,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ✅ Correct: Mount all routes under /api
 app.use("/api", router);
 
 module.exports = app;
