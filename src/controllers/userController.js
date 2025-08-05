@@ -1,6 +1,6 @@
 const User = require("../models/userModel");
 
-// ✅ Registration
+// Registration
 exports.register = (req, res) => {
   const {
     uname,
@@ -39,7 +39,7 @@ exports.register = (req, res) => {
     });
 };
 
-// ✅ Login (ADD THIS)
+//Login (ADD THIS)
 exports.login = (req, res) => {
   const { uemail, pass } = req.body;
 

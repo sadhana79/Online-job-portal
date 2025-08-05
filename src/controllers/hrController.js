@@ -17,7 +17,7 @@ exports.createUser = (req, res) => {
 };
 
 
-// 📃 Get HR users (with pagination)
+//Get HR users (with pagination)
 exports.listUsers = (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
@@ -45,7 +45,7 @@ exports.listUsers = (req, res) => {
     });
 };
 
-// ❌ Delete HR user (soft delete)
+//  Delete HR user
 exports.deleteUser = (req, res) => {
   const id = req.params.id;
 
@@ -70,11 +70,11 @@ exports.updateUser = (req, res) => {
 
   const sql = "UPDATE hr SET hname = ?, email = ?, contact = ? WHERE hid = ? AND status = 'active'";
 
-  const db = require("../../db"); // or wherever your DB is
+  const db = require("../../db"); 
 
   db.query(sql, [hname, email, contact, id], (err, result) => {
     if (err) {
-      console.error("❌ Update failed:", err);
+      console.error(" Update failed:", err);
       res.status(500).json({ error: "Failed to update HR user" });
     } else {
       res.status(200).json({ message: "HR user updated successfully" });
