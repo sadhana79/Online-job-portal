@@ -16,12 +16,15 @@ exports.scheduleInterview = (req, res) => {
   // verify candidate and job exist
   db.query("SELECT id FROM users WHERE id = ?", [candidateId])
     .then((rows) => {
-      if (!rows.length) throw { status: 404, message: "Candidate not found" };
+      if (!rows.length) throw { status: 404, message: "user not found" };
       return db.query("SELECT id FROM jobs WHERE id = ?", [jobId]);
     })
     .then((rows) => {
       if (!rows.length) throw { status: 404, message: "Job not found" };
-      return db.query("INSERT INTO schedules (candidate_id, job_id, date_time, mode, location, meeting_link, notes, status) VALUES (?,?,?,?,?,?,?,'SCHEDULED')", [candidateId, jobId, `${date} ${time}:00`, mode, location || null, meetingLink || null, notes || null]);
+      return db.query(
+        "INSERT INTO schedules (candidate_id, job_id, date_time, mode, location, meeting_link, notes, status) VALUES (?,?,?,?,?,?,?,'SCHEDULED')",
+        [candidateId, jobId, `${date} ${time}:00`, mode, location || null, meetingLink || null, notes || null]
+      );
     })
     .then(() => res.status(201).json({ message: "Interview scheduled and notification sent to candidate." }))
     .catch((err) => {
