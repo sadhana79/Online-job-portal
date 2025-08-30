@@ -1,0 +1,10 @@
+const router = require('express').Router();
+const { auth, role } = require('../middleware/auth');
+const ctrl = require('../controllers/jobs');
+router.get('/', ctrl.list);
+router.get('/my', auth, role('hr'), ctrl.mine);
+router.get('/:id', ctrl.byId);
+router.post('/', auth, role('hr'), ctrl.create);
+router.put('/:id', auth, role('hr'), ctrl.update);
+router.delete('/:id', auth, role('hr','admin'), ctrl.remove);
+module.exports = router;
