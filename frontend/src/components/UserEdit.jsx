@@ -1,74 +1,83 @@
+
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function UserEdit() {
   const { id } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api.get(`/admin/user/${id}`)
-      .then((response) => setUser(response.data))
+      .then((response) => {
+        setUser(response.data);
+      })
       .catch((error) => {
         toast.error('Failed to fetch user details.');
         console.error(error);
-      });
+      })
+      .finally(() => setLoading(false));
   }, [id]);
 
-  const handleUpdateUser = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    const updatedUser = Object.fromEntries(form.entries());
-
-    api.put(`/admin/user/${id}`, updatedUser)
-      .then(() => {
-        toast.success('User updated successfully');
-        history.push('/admin/users');
-      })
-      .catch((error) => {
-        toast.error('Error updating user');
-        console.error(error);
-      });
+    try {
+      const fd = new FormData(e.target);
+      const payload = Object.fromEntries(fd.entries());
+      await api.put(`/admin/user/${id}`, payload);
+      toast.success('User updated');
+      navigate('/admin?tab=users');
+    } catch (err) {
+      console.error(err.response?.data || err.message);
+      toast.error('Failed to update user');
+    }
   };
 
-  if (!user) return <div>Loading...</div>;
+  if (loading) return <div className="p-3">Loading...</div>;
+  if (!user) return <div className="p-3">User not found</div>;
 
   return (
-    <div className="container">
-      <h4>Edit User</h4>
-      <form className="row g-3 mb-4 p-3 border rounded shadow-sm" onSubmit={handleUpdateUser}>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">Name</label>
-          <input className="form-control" name="name" defaultValue={user.name} required />
+    <div className="container p-3">
+      <h3>Edit User</h3>
+      <form className="row g-3" onSubmit={handleSubmit}>
+        <div className="col-md-4">
+          <label className="form-label">Name</label>
+          <input name="name" defaultValue={user.name} className="form-control" required />
         </div>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">Email</label>
-          <input type="email" className="form-control" name="email" defaultValue={user.email} required />
+        <div className="col-md-4">
+          <label className="form-label">Email</label>
+          <input name="email" defaultValue={user.email} className="form-control" type="email" required />
         </div>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">Password</label>
-          <input type="password" className="form-control" name="password" placeholder="Password" />
+        <div className="col-md-4">
+          <label className="form-label">Contact</label>
+          <input name="contact" defaultValue={user.contact} className="form-control" />
         </div>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">Education</label>
-          <input className="form-control" name="education" defaultValue={user.education} />
+        <div className="col-md-4">
+          <label className="form-label">Education</label>
+          <input name="education" defaultValue={user.education} className="form-control" />
         </div>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">Skills</label>
-          <input className="form-control" name="skills" defaultValue={user.skills} />
+        <div className="col-md-4">
+          <label className="form-label">College</label>
+          <input name="college" defaultValue={user.college} className="form-control" />
         </div>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">Experience</label>
-          <input className="form-control" name="experience" defaultValue={user.experience} />
+        <div className="col-md-4">
+          <label className="form-label">Skills</label>
+          <input name="skills" defaultValue={user.skills} className="form-control" />
         </div>
-        <div className="col-md-3">
-          <label className="form-label fw-bold">College</label>
-          <input className="form-control" name="college" defaultValue={user.college} />
+        <div className="col-md-4">
+          <label className="form-label">Experience</label>
+          <input name="experience" defaultValue={user.experience} className="form-control" />
         </div>
-        <div className="col-md-3 d-flex align-items-end">
-          <button className="btn btn-primary w-100">Update User</button>
+        <div className="col-md-4">
+          <label className="form-label">Password (leave blank to keep)</label>
+          <input name="password" className="form-control" type="password" />
+        </div>
+        <div className="col-12">
+          <button className="btn btn-primary">Update User</button>
+          <button type="button" className="btn btn-secondary ms-2" onClick={()=>navigate('/admin?tab=users')}>Cancel</button>
         </div>
       </form>
     </div>

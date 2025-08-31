@@ -13,6 +13,8 @@ import UserDashboard from './pages/UserDashboard'
 import HRDashboard from './pages/HRDashboard'
 import AdminDashboard from './pages/AdminDashboard'
 import UpdateHrForm from './components/UpdateHrForm'
+import UserEdit from './components/UserEdit'
+
 
 
 import { getToken } from './utils/auth'
@@ -29,6 +31,7 @@ export default function App(){
   return (
     <>
       <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -40,8 +43,9 @@ export default function App(){
         <Route path="/hr" element={<Protected roles={['hr']}><HRDashboard /></Protected>} />
         <Route path="/admin" element={<Protected roles={['admin']}><AdminDashboard /></Protected>} />
         <Route path="/admin/hr/:id/edit" element={<Protected roles={['admin']}><UpdateHrForm /></Protected>} />
-        
+        <Route path="/admin/user/:id/edit" element={<Protected roles={['admin']}><UserEdit /></Protected>} />
       </Routes>
+
         <Footer />
       <ToastContainer position="top-right" />
     </>
