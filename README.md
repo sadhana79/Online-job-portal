@@ -1,111 +1,93 @@
-🧑‍💼 Online Job Portal
+# 💼 Online Job Portal  
 
-A full-stack job portal application built using React.js, Node.js, Express, MySQL, Bootstrap, and CSS.
-This platform connects job seekers, HRs, and Admins in a smooth hiring process with role-based dashboards.
+🚀 A **full-stack web application** for job seekers, HR, and admins.  
+Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.  
 
-🚀 Features
+![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)  
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)  
+![Express](https://img.shields.io/badge/Framework-Express-lightgrey?logo=express)  
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql)  
+![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)  
 
-🔐 Authentication & Authorization for Admin, HR, and User roles
+---
 
-👤 User Dashboard:
+## ✨ Features  
 
-Update profile
+### 👤 User Panel  
+- 🔑 Register & Login  
+- 📝 Create & Update Profile  
+- 🔍 Search & Apply for Jobs  
+- 📊 Track Application Status  
 
-Search and apply for jobs
+### 🏢 HR Panel  
+- 🏷️ Post & Manage Jobs  
+- 📂 View Applications  
+- 📅 Schedule Interviews (Online/Offline with Google Meet/Address)  
 
-Track applications
+### 🔑 Admin Panel  
+- 👨‍💻 Manage Users & HR Accounts  
+- 💼 Manage All Job Postings  
+- 📊 Dashboard with Statistics  
 
-🧑‍💻 HR Panel:
+---
 
-Post and manage job openings
+## 🛠️ Tech Stack  
 
-View and shortlist candidates
+| Layer       | Technology                  |
+|-------------|-----------------------------|
+| Frontend    | React.js, CSS, Bootstrap    |
+| Backend     | Node.js, Express.js         |
+| Database    | MySQL                       |
+| Auth & Mail | JWT, Nodemailer             |
 
-Schedule interviews (Online via Google Meet / Offline via Address)
+---
 
-🧑‍💻 Admin Panel:
+## ⚙️ Installation  
 
-Manage HRs and Users
-
-View statistics (job count, application count, charts)
-
-Maintain system access
-
-📊 Statistics Dashboard:
-
-Job postings count
-
-Applications received
-
-Visual charts for insights
-
-📧 Email Notifications via NodeMailer
-
-🎨 Responsive UI with Bootstrap & CSS
-
-Tech Stack
-
-Frontend: React.js, Bootstrap, CSS
-Backend: Node.js, Express.js
-Database: MySQL
-Other Tools: Nodemailer, JWT Authentication
-
-📂 Project Structure
-JobPortal/
- ├── backend/          # Node.js + Express API
- ├── frontend/         # React app
- ├── README.md         # Project documentation
- └── ...
-
-⚙️ Installation
-
-Clone the repository
-
+```bash
+# Clone the repo
 git clone https://github.com/yourusername/jobportal.git
 cd jobportal
 
-
-Backend Setup
-
+# Backend setup
 cd backend
 npm install
 npm start
 
-
-Frontend Setup
-
+# Frontend setup
 cd frontend
-npm install
-npm start
-
-
-Database Setup (MySQL)
-
-Create a database jobportal_db
-
-Import the provided .sql file (if you have one)
-
-Configure DB credentials in backend/config/db.js
-
-Environment Variables (Backend) → create .env file
-
+Environment Variables (backend/.env)
 PORT=5000
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=yourpassword
-DB_NAME=jobportal_db
+DB_NAME=jobportal
 JWT_SECRET=your_secret_key
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your_email@gmail.com
 SMTP_PASS=your_email_password
 
+📂 Project Structure
+JobPortal/
+ ├── backend/         # Node.js + Express server
+ ├── frontend/        # React frontend
+ ├── database.sql     # MySQL schema
+ └── README.md        # Documentation
+
 📸 Screenshots
+User Dashboard	HR Panel	Admin Panel
 
-(Add screenshots of Login, User Dashboard, HR Panel, Admin Panel, Job Posting, etc.)
-
+	
+	
 📧 Contact
 
-Developed by Your Name
+👨‍💻 Developed by Sadhana Gonge
 🔗 LinkedIn
  | GitHub
+
+
+
+- `Sadhana79` 
+- `Sadhana Gonge` 
+
