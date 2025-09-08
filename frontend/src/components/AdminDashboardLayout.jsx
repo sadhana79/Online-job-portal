@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 
-export default function DashboardLayout({ children, active, onTabChange }) {
+export default function AdminDashboardLayout({ children, active, onTabChange }) {
   const [me, setMe] = useState(null);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function DashboardLayout({ children, active, onTabChange }) {
 
   
   const tabs = [
-    { key: "stats", label: "Stats" },
+    { key: "stats", label: "Statistics" },
     { key: "hrs", label: "Manage HR" },
     { key: "users", label: "Manage Users" },
     { key: "profile", label: "Profile" },
@@ -34,22 +34,23 @@ export default function DashboardLayout({ children, active, onTabChange }) {
         
             {me && (
               <div className="text-center mb-4 w-100">
-                <img
-                  src={
-                    me.avatar
-                      ? `http://localhost:5000/${me.avatar}`
-                      : "https://via.placeholder.com/80"
-                  }
-                  alt="profile"
-                  className="rounded-circle mb-2"
-                  style={{ width: "70px", height: "70px", objectFit: "cover" }}
-                />
+               <img
+            src={
+               me.avatar
+              ? `http://localhost:5000${me.avatar}`  
+              : "https://via.placeholder.com/80"
+              }
+             alt="profile"
+            className="rounded-circle mb-2 "
+              style={{ width: "70px", height: "70px", objectFit: "cover", border: "2px solid #ccd1dbff" }}
+            />
+
                 <h6 className="mb-0 text-white">{me.name}</h6>
-                <small className="text-light">{me.email}</small>
+              
               </div>
             )}
 
-            {/* Tabs */}
+            
             <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100">
               {tabs.map((t) => (
                 <li className="nav-item w-100" key={t.key}>
@@ -72,11 +73,12 @@ export default function DashboardLayout({ children, active, onTabChange }) {
       </div>
 
       
+       
       <style>
         {`
           .tab-btn {
             background: transparent;
-            border: none;
+            border: 1px solid rgba(255,255,255,0.2);
             padding: 10px 15px;
             border-radius: 8px;
             color: white;
@@ -89,11 +91,16 @@ export default function DashboardLayout({ children, active, onTabChange }) {
           .active-tab {
             background: linear-gradient(135deg, #007bff, #3399ff);
             color: white !important;
-            border: none;
+            border: 1px solid #3399ff;
             padding: 10px 15px;
             border-radius: 8px;
             font-weight: 500;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          }
+          .sidebar-item-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
           }
         `}
       </style>

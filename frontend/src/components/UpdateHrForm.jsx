@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../services/api';
-import DashboardLayout from './AdminDashboardLayout';
+import AdminDashboardLayout from './AdminDashboardLayout';
 import { toast } from 'react-toastify';
 
 export default function UpdateHrForm(){
@@ -21,9 +21,13 @@ export default function UpdateHrForm(){
   };
 
   return (
-    <DashboardLayout>
-      <div className="container mt-4">
-        <h3>Update HR</h3>
+    <AdminDashboardLayout>
+      <div className="container mt-5">
+  <div className="card shadow-lg border-1 rounded-4">
+    <div className="card-header bg-primary text-white fw-bold fs-5">
+      Update HR
+    </div>
+     <div className="card-body">
         <form className="row g-3" onSubmit={submit}>
           <div className="col-md-6">
             <label className="form-label fw-bold">Name</label>
@@ -51,6 +55,8 @@ export default function UpdateHrForm(){
           </div>
         </form>
       </div>
-    </DashboardLayout>
+      </div>
+      </div>
+    </AdminDashboardLayout>
   );
 }

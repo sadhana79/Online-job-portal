@@ -13,17 +13,21 @@ export default function Navbar(){
   return (
     <nav 
       className="navbar navbar-expand-lg navbar-dark px-3 shadow-sm" 
-      style={{ backgroundColor: "#2c3e50", marginBottom: "15px", borderRadius: "8px" }}
+      style={{ backgroundColor: "#2c3e50", borderRadius: "0" }}
     >
       <Link className="navbar-brand d-flex align-items-center gap-2" to="/">
         <img src="/logo.jpg" alt="logo" width="50" height="50" className="rounded-circle shadow-sm" /> 
-        
       </Link>
 
       <div className="ms-auto d-flex gap-3 align-items-center">
-        <a className="nav-link text-white" href="/">Home</a>
-        <a className="nav-link text-white" href="/about">About</a>
-        <a className="nav-link text-white" href="/contact">Contact</a>
+        
+        {role!=='admin' && role!=='hr' && (
+          <>
+            <a className="nav-link text-white" href="/">Home</a>
+            <a className="nav-link text-white" href="/about">About</a>
+            <a className="nav-link text-white" href="/contact">Contact</a>
+          </>
+        )}
 
         {!token && <Link className="btn btn-outline-light" to="/login">Login</Link>}
         {!token && <Link className="btn btn-primary fw-bold" to="/register">Register</Link>}

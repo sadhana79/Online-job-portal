@@ -8,7 +8,7 @@ export default function DashboardLayout({ children, active, onTabChange }) {
     api.get("/users/me").then((r) => setMe(r.data));
   }, []);
 
-  // Tabs specific to HR (aligned with HRDashboard view keys)
+  
   const tabs = [
     { key: "add", label: "Add Job" },
     { key: "manage", label: "Manage Jobs" },
@@ -19,7 +19,7 @@ export default function DashboardLayout({ children, active, onTabChange }) {
   return (
     <div className="container-fluid">
       <div className="row flex-nowrap">
-    
+        
         <div
           className="col-auto col-md-3 col-xl-2 px-sm-2 px-0"
           style={{
@@ -29,6 +29,7 @@ export default function DashboardLayout({ children, active, onTabChange }) {
           }}
         >
           <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3 text-dark min-vh-100">
+            
         
             {me && (
               <div className="text-center mb-4 w-100">
@@ -47,7 +48,7 @@ export default function DashboardLayout({ children, active, onTabChange }) {
               </div>
             )}
 
-      
+        
             <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100">
               {tabs.map((t) => (
                 <li className="nav-item w-100" key={t.key}>
@@ -65,11 +66,11 @@ export default function DashboardLayout({ children, active, onTabChange }) {
           </div>
         </div>
 
-        {/* Content */}
+      
         <div className="col py-3">{children}</div>
       </div>
 
-      {/* Styles */}
+    
       <style>
         {`
           .tab-btn {

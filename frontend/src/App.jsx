@@ -14,9 +14,7 @@ import HRDashboard from './pages/HRDashboard'
 import AdminDashboard from './pages/AdminDashboard'
 import UpdateHrForm from './components/UpdateHrForm'
 import UserEdit from './components/UserEdit'
-
-
-
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { getToken } from './utils/auth'
 
 function Protected({roles, children}){

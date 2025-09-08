@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import api from '../services/api'
 import { saveToken } from '../utils/auth'
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -25,7 +25,7 @@ export default function Login() {
   return (
     <div 
       className="d-flex justify-content-center align-items-center" 
-      style={{ minHeight: "100vh", background: "linear-gradient(135deg, #89f7fe, #66a6ff) " }}
+      style={{ minHeight: "100vh", background: "linear-gradient(135deg, #89f7fe, #66a6ff)" }}
     >
       <div 
         className="card shadow-lg border-0" 
@@ -33,10 +33,11 @@ export default function Login() {
           maxWidth: 450, 
           width: "100%", 
           borderRadius: "15px", 
-          background: "#ffffffcc"
+           background: "linear-gradient(135deg, #c4daf1 0%, #f9f9f9 100%)"
         }}
       >
         <div className="card-body p-4">
+        
           <div className="text-center mb-3">
             <img src="/reglogo.png" width="80" alt="Logo" />
           </div>
@@ -59,7 +60,9 @@ export default function Login() {
               onChange={e => setPassword(e.target.value)}
               required
             />
-           <div className="d-flex justify-content-center">
+
+        
+            <div className="d-flex justify-content-center">
               <button 
                 className="btn w-50 fw-bold" 
                 style={{ 
@@ -71,8 +74,15 @@ export default function Login() {
               >
                 SIGN IN
               </button>
-              <div className="mt-3 text-center"><a href="/forgot">Forgot password?</a></div>
-           </div>
+            </div>
+
+          
+            <div className="mt-3 text-center">
+              <Link to="/forgot" className="d-block">Forgot password?</Link>
+              <small className="text-muted">
+                Not registered? <Link to="/register" className="fw-bold">Register here</Link>
+              </small>
+            </div>
 
           </form>
         </div>

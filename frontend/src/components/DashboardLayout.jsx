@@ -3,15 +3,17 @@ import api from "../services/api";
 
 export default function DashboardLayout({ children, active, onTabChange }) {
   const [me, setMe] = useState(null);
+  const defaultAvatar = '/reglogo.png'; 
 
   useEffect(() => {
     api.get("/users/me").then((r) => setMe(r.data));
   }, []);
 
-  // tabs to show in sidebar (user)
+  
   const tabs = [
     { key: "jobs", label: "Jobs" },
     { key: "applied", label: "Applied" },
+    { key: "interviews", label: "My Interview" },
     { key: "profile", label: "Profile" },
   ];
 
@@ -30,25 +32,25 @@ export default function DashboardLayout({ children, active, onTabChange }) {
           }}
         >
           <div className="d-flex flex-column align-items-center align-items-sm-start px-3 text-white min-vh-100 w-100">
-            {/* Profile */}
+      
             {me && (
               <div className="text-center mb-4 w-100">
                 <img
                   src={
                     me.avatar
-                      ? `http://localhost:5000/${me.avatar}`
-                      : "https://via.placeholder.com/80"
+                      ? `http://localhost:5000${me.avatar}`
+                      : defaultAvatar
                   }
                   alt="profile"
                   className="rounded-circle mb-2"
-                  style={{ width: "70px", height: "70px", objectFit: "cover" }}
+                  style={{ width: "70px", height: "70px", objectFit: "cover" ,border: "2px solid #ccd1dbff" }}
+                  onError={(e) => (e.target.src = defaultAvatar)} 
                 />
                 <h6 className="mb-0 text-white">{me.name}</h6>
-                <small className="text-light">{me.email}</small>
               </div>
             )}
 
-            {/* Tabs */}
+            
             <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100">
               {tabs.map((t) => (
                 <li className="nav-item w-100" key={t.key}>
@@ -66,11 +68,11 @@ export default function DashboardLayout({ children, active, onTabChange }) {
           </div>
         </div>
 
-        {/* Content */}
+      
         <div className="col py-3">{children}</div>
       </div>
 
-      {/* Styles */}
+    
       <style>
         {`
           .tab-btn {

@@ -61,19 +61,7 @@ export default function Register(){
             onChange={e=>setPassword(e.target.value)} 
             required
           />
-          <div className="d-flex justify-content-center">
-            <button 
-              className="btn w-50 fw-bold" 
-              style={{ 
-                background: "linear-gradient(90deg, #007bff, #00c6ff)", 
-                color: "#fff", 
-                border: "none", 
-                borderRadius: "8px" 
-              }}
-            >
-              SIGN UP
-            </button>
-          </div>
+         
         
 <div className="row g-3 mt-2">
   <div className="col-md-6">
@@ -97,7 +85,20 @@ export default function Register(){
     <input className="form-control" value={skills} onChange={e=>setSkills(e.target.value)} placeholder="React, Node, SQL" />
   </div>
 </div>
-
+<br/>
+ <div className="d-flex justify-content-center">
+            <button 
+              className="btn w-50 fw-bold" 
+              style={{ 
+                background: "linear-gradient(90deg, #007bff, #00c6ff)", 
+                color: "#fff", 
+                border: "none", 
+                borderRadius: "8px" 
+              }}
+            >
+              SIGN UP
+            </button>
+          </div>
     </form>
       </div>
     </div>

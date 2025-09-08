@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../services/api";
 import { toast } from "react-toastify";
-import DashboardLayout from "../components/AdminDashboardLayout";
-import ProfileForm from '../components/ProfileForm';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AdminDashboardLayout from "../components/AdminDashboardLayout";
+import AdminProfileForm from "../components/AdminProfileForm";
+import UpdateHrForm from "../components/UpdateHrForm";
+import UserEdit from "../components/UserEdit";
+
 
 export default function AdminDashboard() {
   const url = new URL(window.location.href);
@@ -141,30 +143,27 @@ export default function AdminDashboard() {
     <><style>{`
         /* =============== FONT & BACKGROUND =============== */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #f2f6fc; color: #333; }
+        body { font-family: 'Inter', sans-serif; background-color: #f2f6fc; color: #201669ff; }
 
         /* =============== CARD STATS =============== */
-        .card-stats { height: 180px; border-radius: 16px; padding: 20px; font-size: 1rem; position: relative; transition: all 0.3s ease-in-out; }
-        .card-stats:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); }
-        .card-stats .icon { position: absolute; top: 15px; right: 20px; font-size: 3.5rem; opacity: 0.3; z-index: 1; }
-
+        
         .bg-gradient-blue { background: linear-gradient(135deg, #007bff, #00c6ff); color: white; }
         .bg-gradient-green { background: linear-gradient(135deg, #34af38ff, #81c784); color: white; }
         .bg-gradient-orange { background: linear-gradient(135deg, #ff9800, #ffb74d); color: white; }
         .bg-gradient-purple { background: linear-gradient(135deg, #9c27b0, #961fabff); color: white; }
 
         /* =============== TABLES =============== */
-        .table thead { background: linear-gradient(to right, #487ab0ff, #5fa6b9ff); color: white; font-weight: 600; }
+        .table thead { background: linear-gradient(to right, #3775b8ff, #5fa6b9ff); color: white; font-weight: 600; }
         .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(58, 109, 163, 0.05); }
         .table-hover tbody tr:hover { background-color: rgba(0, 0, 0, 0.05); transition: background-color 0.3s ease; }
 
         /* =============== BUTTONS =============== */
-        .btn-primary { background: linear-gradient(45deg, #007bff, #00c6ff); border: none; transition: all 0.3s ease; color: white; }
-        .btn-primary:hover { background: linear-gradient(45deg, #0056b3, #00a0e9); transform: scale(1.03); box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+        .btn-primary { background: linear-gradient(45deg, #0a498dff, #19428eff); border: none; transition: all 0.3s ease; color: white; }
+        .btn-primary:hover { background: linear-gradient(45deg, #1c65b4ff, #1d6b92ff); transform: scale(1.03); box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
         .btn-outline-primary:hover { background-color: #007bff; color: white; border-color: #007bff; }
 
         /* =============== FORMS =============== */
-        form { background: linear-gradient(120deg, #bdcdd8ff, #8bb4eaff); border-radius: 12px; padding: 20px; }
+        form { background: linear-gradient(120deg, #82c2ebff, #4f89c4ff); border-radius: 12px; padding: 20px; }
         input.form-control:focus { border-color: #007bff; box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25); }
 
         /* =============== PAGINATION =============== */
@@ -179,12 +178,12 @@ export default function AdminDashboard() {
 
 
       
-    <DashboardLayout active={tab} onTabChange={setTab}>
+    <AdminDashboardLayout active={tab} onTabChange={setTab}>
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h3 className="m-0">Admin Dashboard</h3>
+        <h4 className="m-0">Admin Dashboard</h4>
         <div className="btn-group">
           <button className={`btn btn-sm ${tab === "stats" ? "btn-primary" : "btn-outline-primary"}`} onClick={() => setTab("stats")}>
-            Stats
+            Stat
           </button>
           <button className={`btn btn-sm ${tab === "hrs" ? "btn-primary" : "btn-outline-primary"}`} onClick={() => setTab("hrs")}>
             HRs
@@ -198,46 +197,64 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      {tab === "profile" && (<ProfileForm />)}
+      {tab === "profile" && (<AdminProfileForm />)}
 
       {tab === "hrs" && (
         <div>
-          <form className="row g-3 mb-4 p-3 border rounded shadow-sm" onSubmit={addHR}>
+          
+          <form className="row g-1 mb-4 p-5 border rounded shadow-sm" onSubmit={addHR}>
             <h4>Add HR</h4>
             <div className="col-md-3"><input className="form-control" name="name" placeholder="HR Name" required /></div>
             <div className="col-md-3"><input type="email" className="form-control" name="email" placeholder="HR Email" required /></div>
-            <div className="col-md-3"><input className="form-control" name="contact" placeholder="HR Contact" /></div>
-            <div className="col-md-3 d-flex align-items-end"><button className="btn btn-primary w-100">Add HR</button></div>
+            <div className="col-md-3"><input className="form-control" name="contact" placeholder="HR Contact" required/></div>
+             <div className="col-md-3">
+    <input type="password" className="form-control" name="password" placeholder="Password" required />
+  </div>
+            <div className="col-md-3 d-flex align-items-end"><button className="btn btn-primary w-100 me-2">Add HR</button>
+             <button type="button" className="btn btn-secondary w-100" onClick={(e) => e.target.form.reset()}>
+      Cancel </button>
+            </div>
           </form>
+          
+           <div className="card shadow-sm mb-3">
+            <div className="card-body">
           <h4>View HR</h4>
-          <input className="form-control mb-2" placeholder="Search HR..." value={qHr} onChange={e => setQHr(e.target.value)} />
+          <input className="form-control mb-2" placeholder="Search HR..." value={qHr} onChange={e => setQHr(e.target.value)} style={{ border: '2px solid #8f8f8fff', borderRadius: '6px' }}/>
           <div className="table-responsive">
-            <table className="table table-striped">
-              <thead><tr><th>Name</th><th>Email</th><th>Contact</th><th>Actions</th></tr></thead>
+             <table className="table table-hover table-striped align-middle custom-table-header">
+              
+              <thead><tr><th>Sr.No</th><th>Name</th><th>Email</th><th>Contact</th><th>Actions</th></tr></thead>
               <tbody>
-                {paginate(filteredHrs, hrPage).map((h) => (
-                  <tr key={h.id}>
+              
+                     {paginate(filteredHrs, hrPage).map((h, idx) => (
+                <tr key={h.id}>
+                 <td>{(hrPage - 1) * itemsPerPage + idx + 1}</td>
                     <td>{h.name}</td><td>{h.email}</td><td>{h.contact || '-'}</td>
                     <td>
                       <Link className="btn btn-sm btn-outline-primary" to={`/admin/hr/${h.id}/edit`}>Update</Link>
-                      <button className="btn btn-sm btn-outline-danger ms-2" onClick={() => deleteHR(h.id)}>Delete</button>
-                    </td>
+                      <button className="btn btn-sm btn-outline-danger ms-2" onClick={() => {
+                  if (window.confirm("Are you sure you want to delete this HR?")) { deleteHR(h.id);
+                   }
+                 }}>  Delete</button>
+             </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <div className="d-flex justify-content-end align-items-center p-2">
+            <div className="d-flex justify-content-center align-items-center p-2">
               <button className="btn btn-sm btn-outline-secondary me-2" disabled={hrPage === 1} onClick={() => setHrPage(p => p - 1)}>Previous</button>
               <span>Page {hrPage} of {hrPages}</span>
               <button className="btn btn-sm btn-outline-secondary ms-2" disabled={hrPage === hrPages} onClick={() => setHrPage(p => p + 1)}>Next</button>
             </div>
           </div>
         </div>
+        </div>
+        </div>
       )}
 
       {tab === "users" && (
         <div>
-          <form className="row g-3 mb-4 p-3 border rounded shadow-sm" onSubmit={addUser}>
+          <form className="row g-1 mb-4 p-3 border rounded shadow-sm" onSubmit={addUser}>
             <h4>Add User</h4>
             <div className="col-md-3"><input className="form-control" name="name" placeholder="User Name" required /></div>
             <div className="col-md-3"><input type="email" className="form-control" name="email" placeholder="User Email" required /></div>
@@ -247,37 +264,52 @@ export default function AdminDashboard() {
             <div className="col-md-3"><input className="form-control" name="college" placeholder="User College" /></div>
             <div className="col-md-3"><input className="form-control" name="skills" placeholder="User Skills" /></div>
             <div className="col-md-3"><input className="form-control" name="experience" placeholder="User Experience" /></div>
-            <div className="col-md-3 d-flex align-items-end"><button className="btn btn-primary w-100">Add User</button></div>
+            <div className="col-md-3 d-flex align-items-end"><button className="btn btn-primary w-100 me-2">Add User</button>
+              <button type="button" className="btn btn-secondary w-100" onClick={(e) => e.target.form.reset()}>
+             Cancel</button>
+            </div>
+            
           </form>
-
+          
+          <div className="card shadow-sm mb-3">
+            <div className="card-body">
           <h4>View Users</h4>
-          <input className="form-control mb-2" placeholder="Search User..." value={qUser} onChange={e => setQUser(e.target.value)} />
+          <input className="form-control mb-2" placeholder="Search User..." value={qUser} onChange={e => setQUser(e.target.value)} style={{ border: '2px solid #8f8f8fff', borderRadius: '6px' }} />
           <div className="table-responsive">
-            <table className="table table-striped">
+             <table className="table table-hover  table-striped align-middle custom-table-header">
               <thead>
                 <tr>
-                  <th>Name</th><th>Email</th><th>Contact</th><th>Education</th><th>College</th><th>Skills</th><th>Experience</th><th>Actions</th>
+                  <th>Sr.No</th><th>Name</th><th>Email</th><th>Contact</th><th>Education</th><th>College</th><th>Skills</th><th>Experience</th><th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {paginate(filteredUsers, userPage).map((u) => (
-                  <tr key={u.id}>
+               
+                  {paginate(filteredUsers, userPage).map((u, idx) => (
+      <tr key={u.id}>
+        <td>{(userPage - 1) * itemsPerPage + idx + 1}</td>
+            
                     <td>{u.name}</td><td>{u.email}</td><td>{u.contact || '-'}</td><td>{u.education || '-'}</td><td>{u.college || '-'}</td><td>{u.skills || '-'}</td><td>{u.experience || '-'}</td>
                     <td>
                       <Link className="btn btn-sm btn-outline-primary" to={`/admin/user/${u.id}/edit`}>Update</Link>
-                      <button className="btn btn-sm btn-outline-danger ms-2" onClick={() => deleteUser(u.id)}>Delete</button>
-                    </td>
+                  
+                    <button className="btn btn-sm btn-outline-danger "onClick={() => {
+                   if (window.confirm("Are you sure you want to delete this user?")) {  deleteUser(u.id);
+                } }} >  Delete</button> 
+              </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <div className="d-flex justify-content-end align-items-center p-2">
+            <div className="d-flex justify-content-center align-items-center p-2">
               <button className="btn btn-sm btn-outline-secondary me-2" disabled={userPage === 1} onClick={() => setUserPage(p => p - 1)}>Previous</button>
               <span>Page {userPage} of {userPages}</span>
               <button className="btn btn-sm btn-outline-secondary ms-2" disabled={userPage === userPages} onClick={() => setUserPage(p => p + 1)}>Next</button>
             </div>
           </div>
         </div>
+        </div>
+        </div>
+    
       )}
 
      {tab === "stats" && (
@@ -285,7 +317,7 @@ export default function AdminDashboard() {
     <div className="row g-4 mb-4">
       <div className="col-md-3">
         <div
-          className="card shadow-lg text-white p-4 rounded-4"
+          className="card shadow-lg text-white p-4 rounded-4 card-hover"
           style={{ minHeight: "180px", background: "linear-gradient(135deg, #4b0263ff, #7e2a98ff)" }}
         >
           <div className="card-body d-flex align-items-center justify-content-between">
@@ -300,7 +332,7 @@ export default function AdminDashboard() {
 
       <div className="col-md-3">
         <div
-          className="card shadow-lg text-white p-4 rounded-4"
+          className="card shadow-lg text-white p-4 rounded-4 card-hover"
           style={{ minHeight: "180px", background: "linear-gradient(135deg, #05867cff, #38ef7d)" }}
         >
           <div className="card-body d-flex align-items-center justify-content-between">
@@ -315,7 +347,7 @@ export default function AdminDashboard() {
 
       <div className="col-md-3">
         <div
-          className="card shadow-lg text-white p-4 rounded-4"
+          className="card shadow-lg text-white p-4 rounded-4 card-hover"
           style={{ minHeight: "180px", background: "linear-gradient(135deg, #60130bff, #ed213a)" }}
         >
           <div className="card-body d-flex align-items-center justify-content-between">
@@ -330,7 +362,7 @@ export default function AdminDashboard() {
 
       <div className="col-md-3">
         <div
-          className="card shadow-lg text-white p-4 rounded-4"
+          className="card shadow-lg text-white p-4 rounded-4 card-hover"
           style={{ minHeight: "180px", background: "linear-gradient(135deg, #b05500ff, #ffc837)" }}
         >
           <div className="card-body d-flex align-items-center justify-content-between">
@@ -345,23 +377,25 @@ export default function AdminDashboard() {
     </div>
 
 
-        <div className="card shadow-lg mb-4 rounded-4">
+        <div className="card shadow-lg mb-4 rounded-4 card-hover" >
   <div
     className="card-header fw-bold text-white"
-    style={{ background: "linear-gradient(135deg, #1e3c72, #2a5298)" }}
+    style={{ background: "linear-gradient(135deg, #721e1eff, #710e0eff)" }}
   >
     All Jobs
   </div>
   <div className="p-2">
     <input
-      className="form-control"
+      className="form-control border-dark"
       placeholder="Search Jobs..."
       value={qJob}
       onChange={(e) => setQJob(e.target.value)}
+      style={{ borderWidth: "2px" }}
     />
   </div>
   <div className="table-responsive">
-    <table className="table table-hover align-middle mb-0">
+     <table className="table table-hover  table-striped align-middle custom-table-header">
+      
       <thead
         className="text-white"
         style={{ background: "linear-gradient(135deg, #232526, #414345)" }}
@@ -374,22 +408,23 @@ export default function AdminDashboard() {
           <th>Created</th>
         </tr>
       </thead>
-      <tbody>
-        {paginatedJobs.map((j) => (
-          <tr key={j.id}>
-            <td>{j.id}</td>
-            <td>{j.title}</td>
-            <td>{j.category}</td>
-            <td>{j.location}</td>
-            <td>{new Date(j.created_at).toLocaleString()}</td>
-          </tr>
-        ))}
-      </tbody>
+           <tbody>
+  {paginatedJobs.map((j, idx) => (
+    <tr key={j.id} style={{ backgroundColor: idx % 2 !== 0 ? "#f2f2f2" : "transparent" }}>
+      <td>{(jobPage - 1) * itemsPerPage + idx + 1}</td>
+      <td>{j.title}</td>
+      <td>{j.category}</td>
+      <td>{j.location}</td>
+      <td>{new Date(j.created_at).toLocaleString()}</td>
+    </tr>
+  ))}
+</tbody>
+
     </table>
-    <div className="d-flex justify-content-start align-items-center p-2">
+    <div className="d-flex justify-content-center align-items-center p-2">
       <button
-        className="btn btn-sm me-2"
-        style={{ border: "1px solid #000", color: "#000", backgroundColor: "#f1f1f1" }}
+        className="btn btn-blue-hover btn-sm me-2"
+        style={{ border: "1px solid #000", color: "#000", backgroundColor: "#f6f6f6ff" }}
         disabled={jobPage === 1}
         onClick={() => setJobPage((p) => p - 1)}
       >
@@ -397,8 +432,8 @@ export default function AdminDashboard() {
       </button>
       <span>Page {jobPage} of {jobPages}</span>
       <button
-        className="btn btn-sm ms-2"
-        style={{ border: "1px solid #000", color: "#000", backgroundColor: "#f1f1f1" }}
+        className="btn btn-blue-hover btn-sm ms-2"
+        style={{ border: "1px solid #000", color: "#000", backgroundColor: "#f6f7f8ff" }}
         disabled={jobPage === jobPages}
         onClick={() => setJobPage((p) => p + 1)}
       >
@@ -408,23 +443,24 @@ export default function AdminDashboard() {
   </div>
 </div>
 
-<div className="p-2 border border-dark rounded">
+<div className="card shadow-lg mb-4 rounded-4">
   <div
     className="card-header fw-bold text-white"
-    style={{ background: "linear-gradient(135deg, #93291e, #ed213a)" }}
+    style={{ background: "linear-gradient(135deg, #751c12ff, #7d0f1cff)" }}
   >
     All Applications
   </div>
   <div className="p-2">
     <input
-      className="form-control"
+      className="form-control border-dark"
       placeholder="Search Applications..."
       value={qApp}
       onChange={(e) => setQApp(e.target.value)}
+      style={{ borderWidth: "2px" }}
     />
   </div>
   <div className="table-responsive">
-    <table className="table table-hover align-middle mb-0">
+     <table className="table table-hover  table-striped align-middle custom-table-header">
       <thead
         className="text-white"
         style={{ background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)" }}
@@ -440,24 +476,25 @@ export default function AdminDashboard() {
           <th>Applied On</th>
         </tr>
       </thead>
-      <tbody>
-        {paginatedApps.map((a) => (
-          <tr key={a.id}>
-            <td>{a.id}</td>
-            <td>{a.applicant_name}</td>
-            <td>{a.user_email}</td>
-            <td>#{a.job_id} - {a.job_title}</td>
-            <td>{a.category}</td>
-            <td>{a.location}</td>
-            <td>{a.status}</td>
-            <td>{new Date(a.created_at).toLocaleString()}</td>
-          </tr>
-        ))}
-      </tbody>
+        <tbody>
+  {paginatedApps.map((a, idx) => (
+    <tr key={a.id} style={{ backgroundColor: idx % 2 !== 0 ? "#817f7fff" : "transparent" }}>
+      <td>{(appPage - 1) * itemsPerPage + idx + 1}</td>
+      <td>{a.applicant_name}</td>
+      <td>{a.user_email}</td>
+      <td>{a.job_id} - {a.job_title}</td>
+      <td>{a.category}</td>
+      <td>{a.location}</td>
+      <td>{a.status}</td>
+      <td>{new Date(a.created_at).toLocaleString()}</td>
+    </tr>
+  ))}
+</tbody>
+
     </table>
-    <div className="d-flex justify-content-start align-items-center p-2">
+    <div className="d-flex justify-content-center align-items-center p-2">
       <button
-        className="btn btn-sm me-2"
+        className="btn btn-blue-hover btn-sm me-2"
         style={{ border: "1px solid #000", color: "#000", backgroundColor: "#f1f1f1" }}
         disabled={appPage === 1}
         onClick={() => setAppPage((p) => p - 1)}
@@ -466,7 +503,7 @@ export default function AdminDashboard() {
       </button>
       <span>Page {appPage} of {appPages}</span>
       <button
-        className="btn btn-sm ms-2"
+        className="btn btn-blue-hover btn-sm ms-2"
         style={{ border: "1px solid #000", color: "#000", backgroundColor: "#f1f1f1" }}
         disabled={appPage === appPages}
         onClick={() => setAppPage((p) => p + 1)}
@@ -479,7 +516,7 @@ export default function AdminDashboard() {
 
         </div>
       )}
-    </DashboardLayout>
+    </AdminDashboardLayout>
     </>
   );
 }

@@ -25,12 +25,20 @@ export default function ForgotPassword(){
   }
 
   return (
-    <div className="container py-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6 col-lg-5">
-          <div className="card shadow-sm border-0">
-            <div className="card-body p-4">
-              <h4 className="mb-3">Reset Password</h4>
+    <div className="d-flex justify-content-center align-items-center vh-100" style={{ background: "linear-gradient(135deg, #89f7fe, #66a6ff)" }}>
+    <div 
+        className="card shadow-lg border-0" 
+        style={{ 
+          maxWidth: 450, 
+          width: "100%", 
+          borderRadius: "15px", 
+          background: "#ece5e5cc"
+        }}
+      >
+      <div className="card-body p-4">
+    <h3 className="text-center mb-4 fw-bold" style={{ color: "#3566e4ff" }}>Forget Password</h3>
+   
+            
               <form onSubmit={submit}>
                 <div className="mb-3">
                   <label className="form-label">Email</label>
@@ -52,7 +60,8 @@ export default function ForgotPassword(){
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      
+    
+    
   )
 }

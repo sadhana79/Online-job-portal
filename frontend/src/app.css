@@ -1,0 +1,40 @@
+/* Custom table header style for Applied Jobs and My Interviews */
+.custom-table-header th {
+  background-color: #1e3a8a !important; /* dark blue */
+  color: white !important;               /* text color */
+  font-weight: 600;                      /* slightly bolder text */
+}
+
+/* Optional: add hover effect for rows for better UX */
+.custom-table-header tbody tr:hover {
+  background-color: #dbeafe; /* very light blue */
+}
+
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn-blue-hover {
+  background-color: #1d4ed8; /* Blue */
+  color: white;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.btn-blue-hover:hover {
+  background-color: #2563eb; /* Slightly lighter blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heading-dark-blue-center {
+  color: #1e40af;
+  text-align: center;
+}
+
+

@@ -1,11 +1,14 @@
-import React from 'react'
-export default function Footer(){
+import React from "react";
+
+export default function Footer() {
   return (
-    <footer className="mt-5 py-4 bg-light border-top">
-      <div className="container d-flex justify-content-between align-items-center">
-        <div>&copy; {new Date().getFullYear()} Job Portal</div>
-        <div className="small text-muted">All rights reserved</div>
-      </div>
+    <footer
+      className="text-center text-white py-3"
+      style={{ backgroundColor: "#c7d2dcff", marginTop: "0" }}
+    >
+      <p className="mb-0 text-dark">
+        © {new Date().getFullYear()} JobPortal. All rights reserved. | Developed by <strong>Sadhana Gonge</strong>
+      </p>
     </footer>
-  )
+  );
 }
