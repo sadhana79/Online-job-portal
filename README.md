@@ -75,19 +75,13 @@ JobPortal/
  ├── database.sql     # MySQL schema
  └── README.md        # Documentation
 
-📸 Screenshots
+📸 Screenshots 
 User Dashboard	HR Panel	Admin Panel
 
 	
 	
-📧 Contact
-
+Contact
 👨‍💻 Developed by Sadhana Gonge
-🔗 LinkedIn
+🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
-
-
-
-- `Sadhana79` 
-- `Sadhana Gonge` 
 
