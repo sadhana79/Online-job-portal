@@ -1,6 +1,6 @@
 # 💼 Online Job Portal  
 
-  **full-stack web application** for job seekers, HR, and admins. Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.  
+ A **full-stack web application** for job seekers, HR, and admins with **real-time notifications**. Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**. 
 
 > 🗓️ Developed in 2025 | Uploaded for portfolio reference
 
@@ -118,6 +118,7 @@ SMTP_PASS=your_email_password
 
 
 #### Developed by Sadhana Gonge
+
 
 
 
