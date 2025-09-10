@@ -10,6 +10,7 @@ Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.
 ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)  
 
 ---
+![Admin Panel](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/adminpage.jpg)
 
 ## ✨ Features  
 
@@ -118,6 +119,7 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
 
