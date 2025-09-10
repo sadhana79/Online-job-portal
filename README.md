@@ -76,7 +76,8 @@ JobPortal/
  └── README.md        # Documentation
 
 📸 Screenshots
-![Admin Panel](./website%20screenshots/adminpage.jpg)
+![Admin Panel](https://github.com/sadhana79/Online-job-portal/blob/main/website%20screenshots/adminpage.jpg?raw=true)
+
 
 User Dashboard	HR Panel	Admin Panel
 
@@ -86,5 +87,6 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
