@@ -11,6 +11,38 @@ Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.
 
 ---
 ![Admin Panel](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/adminpage.jpg)
+## 📸 Screenshots  
+
+### 🏠 Homepage  
+![Homepage](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/homepage.jpg)  
+
+### 🔑 Login  
+![Login](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/login.jpg)  
+
+### 🔑 Admin Panel  
+![Admin Panel](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/adminpage.jpg)  
+
+### 📂 Applications  
+![Applications](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/application.jpg)  
+
+### 🏢 HR Panel  
+![HR Panel](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/hrpage.jpg)  
+
+### 💼 Jobs Page  
+![Jobs](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/jobs.jpg)  
+
+
+### 👤 User Dashboard  
+![User Dashboard](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/userpage.png)  
+
+### 📝 Applied Jobs  
+![Applied Jobs](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/appliedjob.jpg)  
+
+
+### 📧 Gmail Notification  
+![Gmail](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/gmail.jpg)  
+
+
 
 ## ✨ Features  
 
@@ -119,6 +151,7 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
 
