@@ -3,6 +3,11 @@
 🚀 A **full-stack web application** for job seekers, HR, and admins.  
 Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.  
 
+> 🗓️ Developed in 2021 | Uploaded for portfolio reference
+
+> [Click here to watch the demo video on YouTube](https://youtu.be/ziXiZtKX7Rk)
+
+
 ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react) ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js) ![Express](https://img.shields.io/badge/Framework-Express-lightgrey?logo=express) ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql) ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)  
 
 
@@ -114,6 +119,7 @@ SMTP_PASS=your_email_password
 ├── database.sql # MySQL schema
 
 └── README.md # Documentation
+
 
 
 
