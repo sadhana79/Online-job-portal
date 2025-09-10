@@ -9,6 +9,35 @@ Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql)  
 ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)  
 
+## ✨ Features  
+
+### 👤 User Panel  
+- 🔑 Register & Login  
+- 📝 Create & Update Profile  
+- 🔍 Search & Apply for Jobs  
+- 📊 Track Application Status  
+
+### 🏢 HR Panel  
+- 🏷️ Post & Manage Jobs  
+- 📂 View Applications  
+- 📅 Schedule Interviews (Online/Offline with Google Meet/Address)  
+
+### 🔑 Admin Panel  
+- 👨‍💻 Manage Users & HR Accounts  
+- 💼 Manage All Job Postings  
+- 📊 Dashboard with Statistics  
+
+---
+
+## 🛠️ Tech Stack  
+
+| Layer       | Technology                  |
+|-------------|-----------------------------|
+| Frontend    | React.js, CSS, Bootstrap    |
+| Backend     | Node.js, Express.js         |
+| Database    | MySQL                       |
+| Auth & Mail | JWT, Nodemailer             |
+
 
 ## 📸 Screenshots  
 
@@ -41,36 +70,9 @@ Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.
 
 
 
-## ✨ Features  
 
-### 👤 User Panel  
-- 🔑 Register & Login  
-- 📝 Create & Update Profile  
-- 🔍 Search & Apply for Jobs  
-- 📊 Track Application Status  
 
-### 🏢 HR Panel  
-- 🏷️ Post & Manage Jobs  
-- 📂 View Applications  
-- 📅 Schedule Interviews (Online/Offline with Google Meet/Address)  
 
-### 🔑 Admin Panel  
-- 👨‍💻 Manage Users & HR Accounts  
-- 💼 Manage All Job Postings  
-- 📊 Dashboard with Statistics  
-
----
-
-## 🛠️ Tech Stack  
-
-| Layer       | Technology                  |
-|-------------|-----------------------------|
-| Frontend    | React.js, CSS, Bootstrap    |
-| Backend     | Node.js, Express.js         |
-| Database    | MySQL                       |
-| Auth & Mail | JWT, Nodemailer             |
-
----
 
 ## ⚙️ Installation  
 
@@ -105,36 +107,9 @@ JobPortal/
  ├── database.sql     # MySQL schema
  └── README.md        # Documentation
 
-## 📸 Screenshots  
+ 
 
-## 📸 Screenshots  
 
-### 🏠 Homepage  
-![Homepage](screenshots/homepage.jpg)  
-
-### 👤 User Dashboard  
-![User Dashboard](screenshots/userpage.png)  
-
-### 📝 Applied Jobs  
-![Applied Jobs](screenshots/appliedjob.jpg)  
-
-### 📂 Applications  
-![Applications](screenshots/application.jpg)  
-
-### 🏢 HR Panel  
-![HR Panel](screenshots/hrpage.jpg)  
-
-### 🔑 Admin Panel  
-![Admin Panel](screenshots/adminpage.jpg)  
-
-### 💼 Jobs Page  
-![Jobs](screenshots/jobs.jpg)  
-
-### 📧 Gmail Notification  
-![Gmail](screenshots/gmail.jpg)  
-
-### 🔑 Login  
-![Login](screenshots/login.jpg)  
 
 
 
@@ -148,6 +123,7 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
 
