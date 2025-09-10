@@ -75,9 +75,35 @@ JobPortal/
  ├── database.sql     # MySQL schema
  └── README.md        # Documentation
 
-![Admin Panel](screenshots/adminpage.jpg)
-![HR Panel](screenshots/hrpage.jpg)
-![User Dashboard](screenshots/userpage.png)
+## 📸 Screenshots  
+
+### 🏠 Homepage  
+![Homepage](website%20screenshots/homepage.jpg)  
+
+### 👤 User Dashboard  
+![User Dashboard](website%20screenshots/userpage.png)  
+
+### 📝 Applied Jobs  
+![Applied Jobs](website%20screenshots/appliedjob.jpg)  
+
+### 📂 Applications  
+![Applications](website%20screenshots/application.jpg)  
+
+### 🏢 HR Panel  
+![HR Panel](website%20screenshots/hrpage.jpg)  
+
+### 🔑 Admin Panel  
+![Admin Panel](website%20screenshots/adminpage.jpg)  
+
+### 💼 Jobs Page  
+![Jobs](website%20screenshots/jobs.jpg)  
+
+### 📧 Gmail Notification  
+![Gmail](website%20screenshots/gmail.jpg)  
+
+### 🔑 Login  
+![Login](website%20screenshots/login.jpg)  
+
 
 
 
@@ -88,6 +114,7 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
 
