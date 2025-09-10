@@ -3,8 +3,8 @@
 🚀 A **full-stack web application** for job seekers, HR, and admins.  
 Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.  
 
-![React](https://img.shields.io/badge/Frontend-React-blue?logo=react) ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)![Express](https://img.shields.io/badge/Framework-Express-lightgrey?logo=express)![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql)  
-![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)  
+![React](https://img.shields.io/badge/Frontend-React-blue?logo=react) ![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)![Express](https://img.shields.io/badge/Framework-Express-lightgrey?logo=express) ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?logo=mysql) ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-purple?logo=bootstrap)  
+
 
 
 ## ✨ Features  
@@ -121,6 +121,7 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
 
