@@ -67,21 +67,21 @@ Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.
 ![Gmail](https://raw.githubusercontent.com/sadhana79/Online-job-portal/main/screenshots/gmail.jpg)  
 
 Installation
-# Clone the repo
+## Clone the repo
 git clone https://github.com/yourusername/jobportal.git
 cd jobportal
 
-# Backend setup
+## Backend setup
 cd backend
 npm install
 npm start
 
-# Frontend setup
+## Frontend setup
 cd frontend
 npm install
 npm start
 
-🔧 Environment Variables (backend/.env)
+## Environment Variables (backend/.env)
 
 PORT=5000
 
@@ -103,9 +103,9 @@ SMTP_USER=your_email@gmail.com
 
 SMTP_PASS=your_email_password
 
-📂 Project Structure
+ ## Project Structure
 
-JobPortal/
+### JobPortal/
 
 ├── backend/ # Node.js + Express server
 
@@ -114,6 +114,7 @@ JobPortal/
 ├── database.sql # MySQL schema
 
 └── README.md # Documentation
+
 
 
 
