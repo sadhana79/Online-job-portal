@@ -70,8 +70,8 @@ Built with **React.js, Node.js, Express, MySQL, CSS, and Bootstrap**.
 
 Installation
 ### Clone the repo
-git clone https://github.com/yourusername/jobportal.git
-cd jobportal
+https://github.com/sadhana79/Online-job-portal.git
+cd Online-job-portal
 
 ### Backend setup
 cd backend
@@ -119,6 +119,7 @@ SMTP_PASS=your_email_password
 
 
 #### Developed by Sadhana Gonge
+
 
 
 
