@@ -118,7 +118,8 @@ SMTP_PASS=your_email_password
 └── README.md # Documentation
 
 
-### Developed by Sadhana Gonge
+#### Developed by Sadhana Gonge
+
 
 
 
