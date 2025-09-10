@@ -77,32 +77,35 @@ JobPortal/
 
 ## 📸 Screenshots  
 
+## 📸 Screenshots  
+
 ### 🏠 Homepage  
-![Homepage](website%20screenshots/homepage.jpg)  
+![Homepage](screenshots/homepage.jpg)  
 
 ### 👤 User Dashboard  
-![User Dashboard](website%20screenshots/userpage.png)  
+![User Dashboard](screenshots/userpage.png)  
 
 ### 📝 Applied Jobs  
-![Applied Jobs](website%20screenshots/appliedjob.jpg)  
+![Applied Jobs](screenshots/appliedjob.jpg)  
 
 ### 📂 Applications  
-![Applications](website%20screenshots/application.jpg)  
+![Applications](screenshots/application.jpg)  
 
 ### 🏢 HR Panel  
-![HR Panel](website%20screenshots/hrpage.jpg)  
+![HR Panel](screenshots/hrpage.jpg)  
 
 ### 🔑 Admin Panel  
-![Admin Panel](website%20screenshots/adminpage.jpg)  
+![Admin Panel](screenshots/adminpage.jpg)  
 
 ### 💼 Jobs Page  
-![Jobs](website%20screenshots/jobs.jpg)  
+![Jobs](screenshots/jobs.jpg)  
 
 ### 📧 Gmail Notification  
-![Gmail](website%20screenshots/gmail.jpg)  
+![Gmail](screenshots/gmail.jpg)  
 
 ### 🔑 Login  
-![Login](website%20screenshots/login.jpg)  
+![Login](screenshots/login.jpg)  
+
 
 
 
@@ -114,6 +117,7 @@ Contact
 👨‍💻 Developed by Sadhana Gonge
 🔗 https://github.com/sadhana79/Online-job-portal
  | GitHub
+
 
 
 
