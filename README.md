@@ -84,13 +84,21 @@ npm start
 🔧 Environment Variables (backend/.env)
 
 PORT=5000
+
 DB_HOST=localhost
+
 DB_USER=root
+
 DB_PASS=yourpassword
+
 DB_NAME=jobportal
+
 JWT_SECRET=your_secret_key
+
 SMTP_HOST=smtp.gmail.com
+
 SMTP_PORT=587
+
 SMTP_USER=your_email@gmail.com
 
 SMTP_PASS=your_email_password
@@ -98,10 +106,15 @@ SMTP_PASS=your_email_password
 📂 Project Structure
 
 JobPortal/
+
 ├── backend/ # Node.js + Express server
+
 ├── frontend/ # React frontend
+
 ├── database.sql # MySQL schema
+
 └── README.md # Documentation
+
 
 
 
